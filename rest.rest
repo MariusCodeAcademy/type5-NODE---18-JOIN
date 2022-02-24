@@ -1,1 +1,8 @@
+// mini uzduotis, susikurti 
+// GET /posts-with-cat-date
+// gauti posto id, title, cat name, ir kada sukurta kategorija
+
+// sukurti get/post/delete categoriju routus
+
+
 GET http://localhost:3000/posts

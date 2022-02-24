@@ -4,7 +4,12 @@ const dbConfig = require('../dbConfig');
 async function getPostsDb() {
   try {
     const conn = await mysql.createConnection(dbConfig);
-    const sql = 'SELECT * FROM posts';
+    const sql = `
+    SELECT posts.post_id, posts.title, posts.body, categories.name AS 'category'
+    FROM posts
+    LEFT JOIN categories
+    ON posts.category_id = categories.category_id;
+    `;
     const [posts] = await conn.query(sql);
     await conn.close();
     return posts;
