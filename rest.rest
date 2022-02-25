@@ -6,3 +6,26 @@
 
 
 GET http://localhost:3000/posts
+
+### 
+GET http://localhost:3000/posts/1?postId=1
+
+// ?postId=1 === req.quenry.postId
+// 1 === req.params.id
+# {
+#   "author": "Mike James",
+#   "body": "nice posts man", ==== req.body
+#   "post_id": 3
+# }
+
+### 
+
+
+POST http://localhost:3000/comments 
+Content-Type: application/json
+
+{
+  "author": "Mike James",
+  "body": "nice posts man",
+  "post_id": 3
+}
