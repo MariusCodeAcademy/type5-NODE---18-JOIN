@@ -6,12 +6,12 @@ const commentsRoutes = express.Router();
 commentsRoutes.post('/', commentsController.addComment);
 
 // POST /comments/
-/*  
+/*
 {
-  author: 
-  body: 
+  author:
+  body:
   post_id
-} 
+}
 */
 
 module.exports = commentsRoutes;

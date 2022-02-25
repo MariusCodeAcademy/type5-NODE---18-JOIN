@@ -12,7 +12,6 @@ async function insertNewComment(newCommentData) {
     return addCommentResult;
   } catch (error) {
     console.log('insertNewComment ', error);
-    await conn.close();
     return false;
   }
 }

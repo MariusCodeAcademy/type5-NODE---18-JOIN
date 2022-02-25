@@ -8,7 +8,7 @@
 GET http://localhost:3000/posts
 
 ### 
-GET http://localhost:3000/posts/1?postId=1
+GET http://localhost:3000/posts/3
 
 // ?postId=1 === req.quenry.postId
 // 1 === req.params.id

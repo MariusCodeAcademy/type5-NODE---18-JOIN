@@ -8,7 +8,16 @@ async function postsIndex(req, res) {
   }
   res.json(posts);
 }
+async function singlePost(req, res) {
+  const singlePostData = await postsModel.getSinglePostDb(req.params.id);
+  if (singlePostData === false) {
+    res.status(500);
+    return;
+  }
+  res.json(singlePostData);
+}
 
 module.exports = {
   postsIndex,
+  singlePost,
 };

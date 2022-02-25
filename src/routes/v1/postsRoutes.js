@@ -7,5 +7,6 @@ const postsRoutes = express.Router();
 postsRoutes.get('/', postsController.postsIndex);
 
 // GET /posts/:id (grazina duomenis apie posta kurio id === id)
+postsRoutes.get('/:id', postsController.singlePost);
 
 module.exports = postsRoutes;

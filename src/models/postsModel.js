@@ -19,6 +19,20 @@ async function getPostsDb() {
   }
 }
 
+async function getSinglePostDb(id) {
+  try {
+    const conn = await mysql.createConnection(dbConfig);
+    const sql = 'SELECT * FROM posts WHERE post_id = ?';
+    const [singlePostData] = await conn.execute(sql, [id]);
+    await conn.close();
+    return singlePostData;
+  } catch (error) {
+    console.log('getSinglePostDb', error);
+    return false;
+  }
+}
+
 module.exports = {
   getPostsDb,
+  getSinglePostDb,
 };
