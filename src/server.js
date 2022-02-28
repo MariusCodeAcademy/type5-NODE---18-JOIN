@@ -17,9 +17,11 @@ app.use(express.json());
 
 const postsRoutes = require('./routes/v1/postsRoutes');
 const commentsRoutes = require('./routes/v1/commentsRoutes');
+const catRoutes = require('./routes/v1/catRoutes');
 
 app.use('/posts', postsRoutes);
 app.use('/comments', commentsRoutes);
+app.use('/categories', catRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
