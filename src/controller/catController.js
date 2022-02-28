@@ -11,12 +11,13 @@ async function catIndex(req, res) {
 }
 async function singleCategory(req, res) {
   const { catId } = req.params;
-  const singleCat = await catModel.getSingleCatDb(catId);
+  const [singleCat] = await catModel.getSingleCatDb(catId);
 
   if (singleCat === false) {
     res.status(500);
     return;
   }
+
   res.json(singleCat);
 }
 
