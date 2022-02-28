@@ -8,7 +8,7 @@
 .posts-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 15px
+  gap: 15px;
 }
 
 .one-post {
@@ -19,4 +19,13 @@
 .one-post .title {
   text-transform: uppercase;
   font-weight: normal;
+}
+
+.cat {
+  margin: 2rem 0;
+}
+.cat button {
+  font-size: 16px;
+  background-color: transparent;
+  padding: 8px 16px;
 }

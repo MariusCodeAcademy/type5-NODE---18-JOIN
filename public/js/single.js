@@ -9,7 +9,7 @@ console.log(postId); // "sai"
 
 async function getSinglePost(id) {
   // fetch get single post from back end
-  const resp = await fetch(URL + '/' + id);
+  const resp = await fetch(`${URL}/${id}`);
   const [jsData] = await resp.json();
   console.log('getSinglePost ===', jsData);
   // get commentsByPosId
