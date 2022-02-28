@@ -25,3 +25,7 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
   checkConnection();
 });
+
+// GET /categories (grazina visas kategorijas )
+// GET /categories/:cat_id (grazina kategorija kurios id === cat_id )
+// POST /categories (paduodam name ir sukuriam nauja kategorija)
