@@ -26,3 +26,13 @@
 // pasiimti formos duomenis
 // siusti tuos duomenis ir sukurti resursa/ irasa
 // sureaguoti ar pavyko issiusti ar gauti duomenis
+
+
+ Susikurti Express app su tusciu route hello world
+// Express pagalbines aplikacijos morgan, mysql, express.json(), dotenv
+// prijungti mysql duomenu baze
+// susikurti nauja GET resursa route
+// + controller
+// + model
+
+// susikurti nauja POST resursa
