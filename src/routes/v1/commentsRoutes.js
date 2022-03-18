@@ -7,6 +7,7 @@ commentsRoutes.post('/', commentsController.addComment);
 
 // GET /comments/byPost/:postId (grazinti komentarus kai duotas post ID)
 // SELECT * FROM `comments` WHERE post_id = ?;
+commentsRoutes.get('/byPost/:postId', commentsController.postComments);
 
 // POST /comments/
 /*

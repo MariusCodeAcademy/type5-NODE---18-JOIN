@@ -36,3 +36,7 @@ Content-Type: application/json
   "body": "nice posts man",
   "post_id": 3
 }
+
+###
+
+GET http://localhost:3000/comments/byPost/4
