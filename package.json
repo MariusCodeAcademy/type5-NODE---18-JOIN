@@ -11,7 +11,7 @@
   "scripts": {
     "start": "nodemon src/server.js",
     "lf": "eslint src --fix",
-    "lfp": "eslint public --fix"
+    "lff": "eslint public --fix"
   },
   "repository": {
     "type": "git",
