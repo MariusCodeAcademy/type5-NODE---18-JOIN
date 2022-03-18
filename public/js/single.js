@@ -1,19 +1,20 @@
-const URL = 'http://localhost:3000/posts';
+const URL = 'http://localhost:3000';
 console.log('single');
 
 const params = new URLSearchParams(window.location.search);
 const postId = params.get('postId');
 
 const h1El = document.getElementById('main-title');
+const commEl = document.querySelector('.posts-grid');
 
 // console.log(postId); // "sai"
 
 async function getSinglePost(id) {
   // fetch get single post from back end
-  const resp = await fetch(`${URL}/${id}`);
+  const resp = await fetch(`${URL}/posts/${id}`);
   const [jsData] = await resp.json();
   console.log('getSinglePost ===', jsData);
-  // get commentsByPosId
+  commentsByPosId(id);
   renderSinglePost(jsData, h1El);
 }
 
@@ -29,4 +30,26 @@ function renderSinglePost(postObj, dest) {
   </article>
   `;
   dest.insertAdjacentHTML('afterend', postHtml);
+}
+
+async function commentsByPosId(id) {
+  const resp = await fetch(`${URL}/comments/byPost/${id}`);
+  const jsData = await resp.json();
+  console.log('Comments ===', jsData);
+  renderComments(jsData, commEl);
+}
+
+function renderComments(commArr, dest) {
+  if (!commArr.length) return;
+  commArr.forEach((commObj) => {
+    dest.insertAdjacentHTML(
+      'beforeend',
+      `
+      <article>
+        <h3>${commObj.author}</h3>
+        <p>${commObj.body}</p>
+      </article>
+    `,
+    );
+  });
 }
