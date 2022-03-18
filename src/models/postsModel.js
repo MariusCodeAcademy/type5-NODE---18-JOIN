@@ -22,7 +22,13 @@ async function getPostsDb() {
 async function getSinglePostDb(id) {
   try {
     const conn = await mysql.createConnection(dbConfig);
-    const sql = 'SELECT * FROM posts WHERE post_id = ?';
+    const sql = `
+    SELECT posts.post_id, posts.title, posts.body, categories.name AS 'category'
+    FROM posts
+    LEFT JOIN categories
+    ON posts.category_id = categories.category_id
+    WHERE post_id = ?
+    `;
     const [singlePostData] = await conn.execute(sql, [id]);
     await conn.close();
     return singlePostData;
